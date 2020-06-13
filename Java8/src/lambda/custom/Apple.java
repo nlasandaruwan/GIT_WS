@@ -2,6 +2,8 @@ package lambda.custom;
 
 public class Apple {
 
+
+
 	private String color;
 
 	private int weight;
