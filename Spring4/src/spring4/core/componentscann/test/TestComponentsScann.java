@@ -12,7 +12,13 @@ public class TestComponentsScann {
 		configApplicationContext.register(CDPlayerConfig.class);
 		configApplicationContext.refresh();
 		
-		SgtPeppers peppers = (SgtPeppers) configApplicationContext.getBean("sgtPeppers");
+		SgtPeppers peppers = (SgtPeppers) configApplicationContext.getBean("lonelyHeartsClub");
 		peppers.play();
+		
+		peppers.getBlueRay().play();
+		peppers.getCdPlayer().play();
+		peppers.getVehiclePlayer().play();
+		peppers.getMegaPlayer().play();
+		
 	}
 }
