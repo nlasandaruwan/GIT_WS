@@ -6,11 +6,11 @@ import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import spring4.core.componentscann.intf.CompactDisc;
+import spring4.core.componentscann.implSeperate.VehiclePlayer;
 
 @Component
 @Named("lonelyHeartsClub")
-public class SgtPeppers implements CompactDisc {
+public class SgtPeppers {
 	
 	private String title = "Sgt. Pepper's Lonely Hearts Club Band";
 	private String artist = "The Beatles";
@@ -21,7 +21,13 @@ public class SgtPeppers implements CompactDisc {
 	private VehiclePlayer vehiclePlayer;
 	
 	@Autowired
+	private MiniPlayer miniPlayer;
+
+	@Autowired
 	private MegaPlayer megaPlayer;
+	
+	@Autowired
+	private ExternalPlayer externalPlayer;
 	
 	public SgtPeppers(){}
 	
@@ -53,5 +59,13 @@ public class SgtPeppers implements CompactDisc {
 
 	public MegaPlayer getMegaPlayer() {
 		return megaPlayer;
+	}
+	
+	public MiniPlayer getMiniPlayer() {
+		return miniPlayer;
+	}
+
+	public ExternalPlayer getExternalPlayer() {
+		return externalPlayer;
 	}
 }

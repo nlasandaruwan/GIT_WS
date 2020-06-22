@@ -1,6 +1,5 @@
-package spring4.core.componentscann.impl;
+package spring4.core.componentscann.implSeperate;
 
-import spring4.core.componentscann.intf.CompactDisc;
 
 
 public class VehiclePlayer  {

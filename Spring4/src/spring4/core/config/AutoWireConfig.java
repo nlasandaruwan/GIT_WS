@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 //@ComponentScan(basePackageClasses={spring4.core.componentscann.impl.SgtPeppers.class})
-@ComponentScan(basePackages={"spring4.core.autowire"})
+@ComponentScan(basePackages={"spring4.core.componentscann.impl"})
 
 public class AutoWireConfig {
 	

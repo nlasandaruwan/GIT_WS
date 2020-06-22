@@ -14,5 +14,8 @@
 	<classpathentry kind="lib" path="lib/spring-expression-5.2.7.RELEASE-sources.jar"/>
 	<classpathentry kind="lib" path="lib/spring-expression-5.2.7.RELEASE.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/javax.inject-1-sources.jar"/>
+	<classpathentry kind="lib" path="lib/javax.inject-1.jar"/>
+	<classpathentry kind="lib" path="lib/XML.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

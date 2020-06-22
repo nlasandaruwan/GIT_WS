@@ -4,8 +4,8 @@ import org.springframework.stereotype.Component;
 
 import spring4.core.componentscann.intf.CompactDisc;
 
-@Component("blueeeeRay")
-public class BlueRay  {
+@Component
+public class BlueRay  implements CompactDisc	{
 	private String title = "BlueRay's  Band";
 	private String artist = "BlueRay Artist";
 
