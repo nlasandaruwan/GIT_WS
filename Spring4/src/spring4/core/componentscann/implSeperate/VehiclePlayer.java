@@ -1,7 +1,5 @@
 package spring4.core.componentscann.implSeperate;
 
-
-
 public class VehiclePlayer  {
 	private String title = "VehiclePlayer's  Band";
 	private String artist = "VehiclePlayer Artist";
