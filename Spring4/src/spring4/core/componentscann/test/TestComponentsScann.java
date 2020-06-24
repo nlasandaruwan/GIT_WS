@@ -21,6 +21,8 @@ public class TestComponentsScann {
 		peppers.getMegaPlayer().play();
 		peppers.getMiniPlayer().play();
 		peppers.getExternalPlayer().play();
+		peppers.getDvdPlayer().play();
+		peppers.getThirdPartyPlayer().play();
 		
 	}
 }

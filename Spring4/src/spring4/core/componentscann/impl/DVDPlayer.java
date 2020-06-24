@@ -6,14 +6,10 @@ import org.springframework.stereotype.Component;
 import spring4.core.componentscann.intf.CompactDisc;
 
 @Component
-@Primary
-public class BlueRay  implements CompactDisc	{
-	private String title = "BlueRay's  Band";
-	private String artist = "BlueRay Artist";
-
-	public BlueRay() {
-		System.out.println("Creating a BlueRay........");
-	}
+//@Primary
+public class DVDPlayer {
+	private String title = "DVDPlayer's  Band";
+	private String artist = "DVDPlayer Artist";
 
 	public void play() {
 		System.out.println("Playing " + title + " by " + artist);

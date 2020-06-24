@@ -11,7 +11,7 @@
 
 	<context:component-scan base-package="spring4.core.componentscann.impl" />
 
-	<bean id="externalPlayer" class="spring4.core.componentscann.impl.ExternalPlayer">
+	<bean id="externalPlayer" class="spring4.core.componentscann.impl.ExternalPlayer" primary="true">
 	</bean>
 
 	<bean class="spring4.core.config.XMLLoadedWireConfig" />

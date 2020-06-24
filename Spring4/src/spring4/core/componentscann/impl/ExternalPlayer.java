@@ -1,7 +1,9 @@
 package spring4.core.componentscann.impl;
 
+import spring4.core.componentscann.intf.CompactDisc;
 
-public class ExternalPlayer{
+
+public class ExternalPlayer implements CompactDisc{
 
 	
 	private String title = "ExternalPlayer's  Band";

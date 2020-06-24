@@ -19,6 +19,10 @@ public class SgtPeppers {
 	private BlueRay blueRay;
 	private CDPlayer cdPlayer;
 	private VehiclePlayer vehiclePlayer;
+	@Inject
+	private DVDPlayer dvdPlayer;
+	
+	private ThirdPartyPlayer thirdPartyPlayer; 
 	
 	@Autowired
 	private MiniPlayer miniPlayer;
@@ -67,5 +71,18 @@ public class SgtPeppers {
 
 	public ExternalPlayer getExternalPlayer() {
 		return externalPlayer;
+	}
+
+	public DVDPlayer getDvdPlayer() {
+		return dvdPlayer;
+	}
+
+	@Autowired
+	public void setThirdPartyPlayer(ThirdPartyPlayer thirdPartyPlayer) {
+		this.thirdPartyPlayer = thirdPartyPlayer;
+	}
+
+	public ThirdPartyPlayer getThirdPartyPlayer() {
+		return thirdPartyPlayer;
 	}
 }

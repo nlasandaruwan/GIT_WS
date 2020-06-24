@@ -2,17 +2,19 @@ package spring4.core.componentscann.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import spring4.core.componentscann.intf.CompactDisc;
 
-public class MegaPlayer{
+@Component
+public class ThirdPartyPlayer{
 
 	@Autowired
-	@Qualifier("externalPlayer")
+	@Qualifier("blueRay")
 	private CompactDisc compack;
 	
-	public MegaPlayer(CompactDisc compactDisc ) {
-		System.out.println( "Calling MegaPlayer() ------------------" );
+	public ThirdPartyPlayer(CompactDisc compactDisc ) {
+		System.out.println( "Calling ThirdPartyPlayer() ------------------" );
 		this.compack = compactDisc;
 		System.out.println(compactDisc);
 	}
