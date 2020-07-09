@@ -11,6 +11,6 @@ public class EmployeeNotFoundExceptionMapper implements ExceptionMapper<Employee
 
 	@Override
 	public Response toResponse(EmployeeNotFoundChkedWebAppException exception) {
-		return Response.status(Response.Status.NOT_FOUND).entity(exception.getMessage()).build();
+		return Response.status(Response.Status.UNAUTHORIZED).entity(exception).build();
 	}
 }

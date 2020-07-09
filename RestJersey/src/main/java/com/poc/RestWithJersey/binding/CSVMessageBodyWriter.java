@@ -5,7 +5,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
-import java.util.List;
 
 import javax.ws.rs.Produces;
 import javax.ws.rs.WebApplicationException;
@@ -22,7 +21,7 @@ import com.poc.RestWithJersey.domain.Department;
 
 @Provider
 @Produces("application/csv")
-public class CSVMessageBodyWriter implements MessageBodyWriter<List<Department>> {
+public class CSVMessageBodyWriter implements MessageBodyWriter<Department> {
 
 	@Override
 	public boolean isWriteable(Class<?> type, Type genericType, Annotation[] annotations, MediaType mediaType) {
@@ -38,13 +37,13 @@ public class CSVMessageBodyWriter implements MessageBodyWriter<List<Department>>
 	 * Deprecated by JAX-RS 2.0 and ignored by Jersey runtime
 	 */
 	@Override
-	public long getSize(List<Department> t, Class<?> type, Type genericType, Annotation[] annotations,
+	public long getSize(Department t, Class<?> type, Type genericType, Annotation[] annotations,
 			MediaType mediaType) {
 		return 0;
 	}
 
 	@Override
-	public void writeTo(List<Department> dataList, Class<?> type, Type genericType, Annotation[] annotations,
+	public void writeTo(Department departmentData, Class<?> type, Type genericType, Annotation[] annotations,
 			MediaType mediaType, MultivaluedMap<String, Object> httpHeaders, OutputStream entityStream)
 			throws IOException, WebApplicationException {
 		// This class uses CsvBeanWriter for converting
@@ -54,17 +53,15 @@ public class CSVMessageBodyWriter implements MessageBodyWriter<List<Department>>
 		// (using the supplied name mapping).
 		ICsvBeanWriter writer = new CsvBeanWriter(new PrintWriter(entityStream), CsvPreference.STANDARD_PREFERENCE);
 		// No data then return
-		if (dataList == null || dataList.size() == 0) {
-			return;
-		}
+		
 		// Columns headers in CSV
-		String[] nameMapping = { "departmentId", "departmentName", "managerId", "locationId" };
+		String[] nameMapping = { "departmentId", "departmentName", "departmentCategory", "employeeCount" };
 		// CsvBeanWriter writes the header with the property names
 		writer.writeHeader(nameMapping);
-		for (Object p : dataList) {
-			// Write each row
-			writer.write(p, nameMapping);
-		}
+
+		// Write each row
+		writer.write(departmentData, nameMapping);
+
 		writer.close();
 	}
 }

@@ -117,7 +117,7 @@ public class EmployeeService {
 		if(deleted == null) {
 //			throw new EmployeeNotFoundUnChkedWebAppException("Employee with Id : "+id +" has NOT been found !!! : ", Response.Status.NOT_FOUND);
 //			throw new EmployeeNotFoundUnChkedWebAppException("Employee with Id : "+id +" has NOT been found !!! : ");
-			throw new EmployeeNotFoundChkedWebAppException("Employee with Id : "+id +" has NOT been found !!! : ");
+			throw new EmployeeNotFoundChkedWebAppException("Meaage EmployeeNotFoundChkedWebAppException");
 		}
 		return deleted;
 	}
