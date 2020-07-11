@@ -19,8 +19,9 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.poc.RestWithJersey.annotations.DynamicDataCheck;
 import com.poc.RestWithJersey.annotations.RequestLogger;
-import com.poc.RestWithJersey.annotations.ResponseLogger;
+import com.poc.RestWithJersey.annotations.DynamicResponseLogger;
 import com.poc.RestWithJersey.dao.EmployeeDao;
 import com.poc.RestWithJersey.daoimpl.EmployeeDaoImpl;
 import com.poc.RestWithJersey.domain.Employee;
@@ -35,7 +36,7 @@ public class EmployeeService {
 	@GET
 	@Path("getEmployeeById/{id}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
-	@ResponseLogger
+	@DynamicResponseLogger
 	public Employee getEmployeeById(@PathParam("id") int id) {
 		return dao.getEmployeeById(id);
 	}
@@ -71,6 +72,7 @@ public class EmployeeService {
 	@GET
 	@Path("getEmployeesByName/{name}")
 	@Produces({ MediaType.APPLICATION_XML })
+	@DynamicDataCheck
 	public List<Employee> getEmployeesByName(@Context UriInfo uriInfo) {
 		
 		//http://localhost:8080/RestWithJersey/webresources/EmployeeService/getEmployeesByName?name=T
