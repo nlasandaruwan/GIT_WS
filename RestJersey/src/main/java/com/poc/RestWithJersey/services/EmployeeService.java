@@ -19,6 +19,8 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
+import com.poc.RestWithJersey.annotations.RequestLogger;
+import com.poc.RestWithJersey.annotations.ResponseLogger;
 import com.poc.RestWithJersey.dao.EmployeeDao;
 import com.poc.RestWithJersey.daoimpl.EmployeeDaoImpl;
 import com.poc.RestWithJersey.domain.Employee;
@@ -33,6 +35,7 @@ public class EmployeeService {
 	@GET
 	@Path("getEmployeeById/{id}")
 	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	@ResponseLogger
 	public Employee getEmployeeById(@PathParam("id") int id) {
 		return dao.getEmployeeById(id);
 	}
@@ -59,6 +62,7 @@ public class EmployeeService {
 	@GET
 	@Path("getEmployees")
 	@Produces({ MediaType.APPLICATION_XML })
+	@RequestLogger
 	public List<Employee> getEmployees() {
 		return dao.getEmployees();
 	}

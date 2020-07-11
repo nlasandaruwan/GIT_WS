@@ -15,7 +15,7 @@ public class CORSFilter implements ContainerResponseFilter {
 	public void filter(ContainerRequestContext requestContext, ContainerResponseContext cres) throws IOException {
 		// Specify CORS headers: * represents allow all values
 		String URI = requestContext.getUriInfo().getRequestUri().toString();
-		if (URI.contains("EmployeeService/getEmployeesByName/")) {
+		if (URI.contains("EmployeeService/getEmployeesByName")) {
 
 			cres.getHeaders().add("Access-Control-Allow-Origin", "*");
 			cres.getHeaders().add("Access-Control-Allow-Headers", "*");
