@@ -6,6 +6,7 @@ import java.util.List;
 import com.poc.RestWithJersey.dao.EmployeeDao;
 import com.poc.RestWithJersey.domain.Employee;
 
+@javax.inject.Singleton
 public class EmployeeDaoImpl implements EmployeeDao {
 
 	List<Employee> employeeList = new ArrayList<Employee>();
