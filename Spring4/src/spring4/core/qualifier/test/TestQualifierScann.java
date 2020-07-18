@@ -14,7 +14,7 @@ public class TestQualifierScann {
 		configApplicationContext.refresh();
 		
 		DessertTaster peppers = (DessertTaster) configApplicationContext.getBean("dessertTaster");
-		peppers.getDessert().taste();
-
+		peppers.getSoftDessert().taste();
+		peppers.getFrutyDessert().taste();
 	}
 }

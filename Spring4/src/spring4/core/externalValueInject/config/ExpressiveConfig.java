@@ -20,15 +20,18 @@ public class ExpressiveConfig {
 	@Bean("blank")
 	public BlankDisc disc() {
 		return new BlankDisc(env.getProperty("disc.title"),
-				env.getProperty("disc.artist"), env.getProperty("db.connection.count", Integer.class));
+				env.getProperty("disc.artist"), env.getProperty(
+						"db.connection.count", Integer.class));
 	}
-	
-	 @Bean
-	    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-	        PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
-	        propertySourcesPlaceholderConfigurer.setLocations(new ClassPathResource("web.properties"));
-	        //propertySourcesPlaceholderConfigurer.setIgnoreUnresolvablePlaceholders(true);
-	        //propertySourcesPlaceholderConfigurer.setIgnoreResourceNotFound(true);
-	        return propertySourcesPlaceholderConfigurer;
-	    }
+
+	@Bean
+	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+		PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer = new PropertySourcesPlaceholderConfigurer();
+		propertySourcesPlaceholderConfigurer.setLocations(
+				new ClassPathResource("web.properties"), new ClassPathResource(
+						"web.properties"));
+		// propertySourcesPlaceholderConfigurer.setIgnoreUnresolvablePlaceholders(true);
+		// propertySourcesPlaceholderConfigurer.setIgnoreResourceNotFound(true);
+		return propertySourcesPlaceholderConfigurer;
+	}
 }
